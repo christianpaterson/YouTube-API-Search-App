@@ -1,4 +1,9 @@
 
+let searchForm = document.querySelector('#search-form');
+searchForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+})
+
 
 let xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -22,7 +27,6 @@ xhttp.onreadystatechange = function() {
             `
             container.appendChild(videoDiv);
         })
-    
     }
 };
 xhttp.open("GET", "https://www.googleapis.com/youtube/v3/search?part=snippet&q=commitmentrelationships&maxResults=12&key=AIzaSyAokMyi5gwYyITDzEGCWY0dmSZj-DW3Lhs", true);
