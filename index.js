@@ -15,7 +15,7 @@ searchForm.addEventListener('submit', function(e) {
                 return item.snippet;
             })
     
-            let container = document.querySelector('#response');
+            let container = document.querySelector('#response-div');
             container.innerHTML = '';
             videoData.forEach(function(video) {
                 let videoDiv = document.createElement('div');
@@ -45,7 +45,7 @@ xhttp.onreadystatechange = function() {
             return item.snippet;
         })
 
-        let container = document.querySelector('#response');
+        let container = document.querySelector('#response-div');
         videoData.forEach(function(video) {
             let videoDiv = document.createElement('div');
             videoDiv.classList.add('video-div');
@@ -55,11 +55,11 @@ xhttp.onreadystatechange = function() {
                 <p>${video.channelTitle}</p>
                 <p>${new Date(video.publishTime).toLocaleDateString()}</p>
 
-            `
+            `;
             container.appendChild(videoDiv);
         })
     }
 };
 
-xhttp.open("GET", `https://www.googleapis.com/youtube/v3/search?part=snippet&q=commitmentrelationships&maxResults=12&key=AIzaSyAokMyi5gwYyITDzEGCWY0dmSZj-DW3Lhs`, true);
+xhttp.open("GET", `https://www.googleapis.com/youtube/v3/search?part=snippet&q=commitment+in+relationships&maxResults=12&key=AIzaSyAokMyi5gwYyITDzEGCWY0dmSZj-DW3Lhs`, true);
 xhttp.send();
